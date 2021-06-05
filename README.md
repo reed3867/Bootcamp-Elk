@@ -1,8 +1,9 @@
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
-Elk Stack Project Diagram.png
-![TODO: Update the path with the name of your diagram](Images/diagram_Elk Stack Project Diagram.png)
+![Elk Stack Project Diagram](https://user-images.githubusercontent.com/78981096/120581652-27fb8480-c3f9-11eb-954a-4aa210fd4ff3.png)
+
+
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -21,12 +22,12 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
+- _TODO: What aspect of security do load balancers protect? Load balancers are placed in-front of the Filebeat, Metricbeat and Docker containers for DVWA.  The Load Balancer distributes the load data across multiple VM's, which helps to avoid any single point failure or excessive workload on any one VM's.  What is the advantage of a jump box?  The advantage of the a jump box is that it precisly allowsIt's an origination point prior to connecting to other servers or questionalble websites. It also routes the admins to connect to it before completing any administrative tasks 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- _TODO: What does Filebeat watch for?  It monitors log files or locations you specify.
+- _TODO: What does Metricbeat record?  It records the metrics from the system and services on your server.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -43,11 +44,10 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
-
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 73.122.211.161
+- _TODO: Add whitelisted IP address?  
+Machines within the network can only be accessed by The JumpBox's address.
+- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?  
 
 A summary of the access policies in place can be found in the table below.
 
